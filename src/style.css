@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 22px;
+    background: rgb(100,125,238);
+    background: linear-gradient(90deg, rgba(100,125,238,1) 35%, rgba(127,83,172,1) 100%);
+    color: white;
+}
+h3 {
+    padding-bottom: 5px;
+    margin: 0;
+}
+.battle {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* align-self:center; */
+    justify-content:center;
+    margin-top: 20px;
+    grid-gap: 40px;
+}
+.battleship {
+    background-color: #18191a;
+    border-radius: 30px;
+    padding: 0 0 40px 40px;
+    align-items: center;
+    width: 350px;
+    height: 250px;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    align-items: center;
+}
+button {
+    background-color: #18191a;
+    border-radius: 25px;
+    padding: 10px 70px 10px 70px;
+    margin-left: 670px;
+    margin-top: 60px;
+    font-size: 20px;
+    color: white;
+}
+button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
