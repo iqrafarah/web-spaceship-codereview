@@ -123,7 +123,6 @@ class Battleship1 extends Spaceship
 
     public function hits($damage)
     {   
-        //added this line
         $this->health -= $this->lasergun*$damage = mt_rand(5, 15);
     }
 } 
