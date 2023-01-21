@@ -35,7 +35,8 @@ class Spaceship
     // Shoot
     public function shoot($distance): int
     {
-        
+        // Het leek me logischer om dit zo te coderen,
+        // want hoe dichterbij je bent hoe meer damage je kunt aanrichten. En als je verder weg bent, kan dat wat minder. 
         if($distance <= 50) {
             $shot = 5;
             $damage = 2;
@@ -120,9 +121,10 @@ class Battleship1 extends Spaceship
        $this->lasergun = $lasergun;
        $this->location = array(43,5);
     }
-
+// Wordt gebruikt om de schade van het battleship te berekenen door zijn lasergun en een random waarde.
     public function hits($damage)
     {   
+
         $this->health -= $this->lasergun*$damage = mt_rand(5, 15);
     }
 } 
@@ -142,12 +144,16 @@ class Battleship2 extends Spaceship
        $this->flamethrower = $flamethrower;
        $this->location = array(29,5);
     }
-
+// Wordt gebruikt om de schade van het battleship te berekenen door zijn Flamethrower en een random waarde.
     public function hit($damage)
     {   
         $this->health -= $this->flamethrower*$damage = mt_rand(5, 15);
     }
 } 
+
+// De reden dat ik het op deze manier gecodeerd heb, is om de winnaar te bepalen op basis 
+// Van de damage en de gezondheid van elk spaceship. En vanwege de random getal in damage dacht ik dat
+// Het gevecht interessanter en onvoorspelbaarder wordt.
 class Battle
 {
     public function fight($battleship1, $battleship2)
@@ -157,6 +163,8 @@ class Battle
         $battleship1->hits($damage2); 
         $battleship2->hit($damage1); 
 
+// Ik gebruik if-else om te bepalen welke spaceship meer gezondheid over heeft en verklaart 
+// Dat spaceship als winnaar door een bericht af te drukken.
         if ($battleship1->health <= $battleship2->health) {
             echo "<h1 style='font-size: 100px; text-align: center; padding-top: 100px;'>Battleship2 won</h1>";
         } elseif ($battleship2->health <= $battleship1->health) {
